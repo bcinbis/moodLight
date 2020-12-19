@@ -36,10 +36,8 @@ if __name__ == "__main__":
     }
 
     for x in range(0, offset_canvas.width):
-        offset_canvas.SetPixel(x, 0, 255, 0, 0)
-        offset_canvas.SetPixel(x, offset_canvas.height - 1, 255, 255, 0)
-
-    for y in range(0, offset_canvas.height):
+        for y in range(0, offset_canvas.height):
+            matrix.SetPixel(x, y, 0, 0, 0)
 
     image = Image.open("./dont enter.jpg")
     # Make image fit our screen.
