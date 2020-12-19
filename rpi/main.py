@@ -29,6 +29,7 @@ def button18_callback(channel):
     while(GPIO.input(18) == GPIO.HIGH):
         pass
     enter = True
+    newIndex = 0
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
@@ -47,11 +48,11 @@ def joinParty(code):
 if __name__ == '__main__':
     disp = Display()
     while not disp.done:
-        if oldIndex != newIndex:
-            disp.sendIndex(newIndex)
-            oldIndex = newIndex
         if enter:
             disp.enter()
             enter = False
+        if oldIndex != newIndex:
+            disp.sendIndex(newIndex)
+            oldIndex = newIndex
     code = disp.STR
     cli = Client(code)

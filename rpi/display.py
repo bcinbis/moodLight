@@ -30,7 +30,7 @@ class Display():
 
         #initializing code entering procedures
         #self.pos = 0
-        self.chars = [' ']
+        self.chars = ['_']
         self.chars += list(string.ascii_lowercase)
         self.str = ''
         self.STR = ''
@@ -39,6 +39,7 @@ class Display():
 
     def printStr(self):
         green = graphics.Color(0,255,0)
+        graphics.DrawText(self.matrix, self.font, 2, 10, green, '   ')
         graphics.DrawText(self.matrix, self.font, 2, 10, green, self.str)
 
     def sendIndex(self, index):
