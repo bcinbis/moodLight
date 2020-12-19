@@ -4,13 +4,12 @@ File for dealing with messaging interaction with server
 import urllib.request
 import requests 
 class Client:
-    def __init__(self, code, serverAddress):
-        self.partyCode = code
+    def __init__(self, serverAddress):
         self.serverAddress = serverAddress
 
     def getImageUrls(self, code):
         params = {
-            'partycode': code
+            'eventcode': code
         }
         return requests.get(f"http://{self.serverAddress}/get-images", params=params).json()
 
@@ -23,11 +22,10 @@ class Client:
 
 if __name__ == "__main__":
     SERVER = '35.239.118.105:4200'
-    CODE = 'AAA'
-    URLS = ["https://storage.googleapis.com/party_images/dont%20enter.jpg", "https://storage.googleapis.com/party_images/green%20light.jpg"]
-
-    client = Client(CODE, SERVER)
-    client.downloadImages(URLS)
+    CODE = 'abc'
+    client = Client(SERVER)
+    urls = client.getImageUrls(CODE)
+    client.downloadImages(urls)
     
 
 

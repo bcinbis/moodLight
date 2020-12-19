@@ -19,8 +19,8 @@ def home():
 
 @app.route('/get-images', methods=['GET'])
 def getImages():
-    partyCode = request.args.get('partycode')
-    images = dbManager.getEventImages(partyCode)
+    eventCode = request.args.get('eventcode')
+    images = dbManager.getEventImages(eventCode)
     return json.dumps(images)
 
 @app.route('/create-event', methods=['POST'])

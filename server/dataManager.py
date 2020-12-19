@@ -36,17 +36,19 @@ class DataManager:
         name = data['name']
         date = data['date']
         images = data['images']
-        # add event to parties table
-        self.cur.execute("INSERT INTO parties (code, name, date) VALUES (%s, %s, %s)", (code, name, date))
-        # add all the image urls to the party_images table
-        for image in images:
-            self.cur.execute("INSERT INTO party_images (code, image_url) VALUES (%s, %s)", (code, image))
-        # update db
-        self.conn.commit()
+
+        print(code, name, date, images)
+        # # add event to parties table
+        # self.cur.execute("INSERT INTO parties (code, name, date) VALUES (%s, %s, %s)", (code, name, date))
+        # # add all the image urls to the party_images table
+        # for image in images:
+        #     self.cur.execute("INSERT INTO party_images (code, image_url) VALUES (%s, %s)", (code, image))
+        # # update db
+        # self.conn.commit()
 
     def getEventImages(self, code):
         # execute SQL command and retreive results
-        self.cur.execute("SELECT image_url FROM party_images WHERE code == (%s)", (code))
+        self.cur.execute("SELECT image_url FROM party_images WHERE code = (%s)", (code))
         rawResult = self.cur.fetchall()
         # parse results into a list of urls
         result = []
