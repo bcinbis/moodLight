@@ -31,7 +31,7 @@ if __name__ == "__main__":
         "blue": [0, 0, 255]
     }
 
-    image = Image.open("./do_not_enter.jpg")
+    image = Image.open("./img/green light.jpg")
     # Make image fit our screen.
     image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
 
