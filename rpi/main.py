@@ -3,6 +3,8 @@ from client import Client
 import client
 import RPi.GPIO as GPIO
 import time
+import fnmatch
+import os
 
 #variables for codeDisplay
 LENGTH = 27
@@ -124,3 +126,11 @@ if __name__ == '__main__':
             oIndex = nIndex
     time.sleep(2)
     del disp
+    files = []
+    for f in os.listdir("testImg"):
+        if fnmatch.fnmatch(f, '*.jpg'):
+            files.append(f)
+    for f in files:
+            os.remove('./testImg/'+f)
+    time.sleep(2)
+    sys.exit(0)
