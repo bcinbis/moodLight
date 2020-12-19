@@ -94,9 +94,9 @@ def button18_callback(channel):
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.add_event_detect(19, GPIO.RISING, callback=button19_callback, bouncetime=200)
+GPIO.add_event_detect(19, GPIO.RISING, callback=button19_callback, bouncetime=400)
 GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.add_event_detect(18, GPIO.RISING, callback=button18_callback, bouncetime=200)
+GPIO.add_event_detect(18, GPIO.RISING, callback=button18_callback, bouncetime=400)
 
 
 
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     #         disp.sendIndex(newIndex)
     #         oldIndex = newIndex
     # code = disp.STR
-    # flag = False
+    flag = False
     # cli = Client(code)
     # #instert all client code
 

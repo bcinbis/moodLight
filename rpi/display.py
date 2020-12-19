@@ -82,6 +82,7 @@ class imgDisplay(Display):
     def __del__(self):
         for f in self.files:
             os.remove('./testImg/'+f)
+        sys.exit(0)
 
 
 
