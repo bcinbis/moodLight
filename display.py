@@ -35,8 +35,8 @@ if __name__ == "__main__":
         "blue": [0, 0, 255]
     }
 
-    for x in range(0, offset_canvas.width):
-        for y in range(0, offset_canvas.height):
+    for x in range(0, matrix.width):
+        for y in range(0, matrix.height):
             matrix.SetPixel(x, y, 0, 0, 0)
 
     image = Image.open("./dont enter.jpg")
