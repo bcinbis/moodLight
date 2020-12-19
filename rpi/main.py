@@ -13,6 +13,7 @@ enter = False
 
 def button19_callback(channel):
     time.sleep(.5)
+    print('button19')
     global newIndex
     global LENGTH
     while(GPIO.input(19) == GPIO.HIGH):
@@ -23,6 +24,7 @@ def button19_callback(channel):
 
 def button18_callback(channel):
     time.sleep(.5)
+    print('button18')
     global enter
     while(GPIO.input(18) == GPIO.HIGH):
         pass
