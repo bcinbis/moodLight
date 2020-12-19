@@ -39,7 +39,7 @@ class Display():
 
     def printStr(self):
         green = graphics.Color(0,255,0)
-        graphics.DrawText(self.matrix, font, 2, 10, green, self.str)
+        graphics.DrawText(self.matrix, self.font, 2, 10, green, self.str)
 
     def sendIndex(self, index):
         self.str =  self.STR + self.chars[index]
