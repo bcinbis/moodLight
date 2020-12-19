@@ -70,6 +70,7 @@ class imgDisplay(Display):
         self.len = len(self.files)
 
     def printImage(self):
+        self.matrix.Clear()
         self.image = Image.open('./testImg/'+self.files[self.index])
         self.image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
         self.matrix.SetImage(self.image.convert('RGB'))
