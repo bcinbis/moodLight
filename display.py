@@ -35,7 +35,7 @@ if __name__ == "__main__":
         "blue": [0, 0, 255]
     }
 
-    image = Image.open("./flower.jpg")
+    image = Image.open("./do_not_enter.jpg")
     # Make image fit our screen.
     image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
 
