@@ -31,8 +31,18 @@ class DataManager:
         # Define cleanup function
         atexit.register(self.cleanup)
 
-    def addParty(self):
-        pass
+    def addParty(self, data):
+        code = data['code']
+        name = data['name']
+        date = data['date']
+        images = data['images']
+        # add party to parties table
+        self.cur.execute("INSERT INTO parties (code, name, date) VALUES (%s, %s, %s)", (code, name, date))
+        # add all the image urls to the party_images table
+        for image in images:
+            self.cur.execute("INSERT INTO party_images (code, image_url) VALUES (%s, %s)", (code, image))
+        # update db
+        self.conn.commit()
 
     def getPartyImages(self, code):
         # execute SQL command and retreive results
@@ -44,3 +54,10 @@ class DataManager:
             result.append(tpl[1])
             
         return result
+
+    def cleanup(self):
+        """
+        Summary: close the connection to the database on termination
+        """
+        print("Running cleanup...")
+        self.conn.close()
