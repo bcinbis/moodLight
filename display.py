@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     matrix = RGBMatrix(options = options)
 
-    font = graphics.font()
+    font = graphics.Font()
     font.LoadFont("rpi-rgb-led-matrix/fonts/7x13.bdf")
 
     red = graphics.Color(255, 0, 0)
