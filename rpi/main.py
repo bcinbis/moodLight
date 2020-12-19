@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 import time
 import fnmatch
 import os
+import sys
 
 #variables for codeDisplay
 LENGTH = 27
@@ -103,6 +104,12 @@ GPIO.add_event_detect(18, GPIO.RISING, callback=button18_callback, bouncetime=40
 
 
 if __name__ == '__main__':
+    files = []
+    for f in os.listdir("testImg"):
+        if fnmatch.fnmatch(f, '*.jpg'):
+            files.append(f)
+    for f in files:
+            os.remove('./testImg/'+f)
     # #joining a social gathering
     # disp = codeDisplay()
     # while not disp.done:
@@ -124,13 +131,6 @@ if __name__ == '__main__':
         if oIndex != nIndex:
             disp.sendIndex(nIndex)
             oIndex = nIndex
-    time.sleep(2)
     del disp
-    files = []
-    for f in os.listdir("testImg"):
-        if fnmatch.fnmatch(f, '*.jpg'):
-            files.append(f)
-    for f in files:
-            os.remove('./testImg/'+f)
     time.sleep(2)
     sys.exit(0)
