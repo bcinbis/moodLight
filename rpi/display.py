@@ -80,10 +80,10 @@ class imgDisplay(Display):
         self.printImage()
 
     def __del__(self):
-        self.image.close()
-        for f in self.files:
-            os.remove('./testImg/'+f)
-        sys.exit(0)
+        pass
+    #     for f in self.files:
+    #         os.remove('./testImg/'+f)
+    #     sys.exit(0)
 
 
 
