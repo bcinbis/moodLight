@@ -79,17 +79,6 @@ class imgDisplay(Display):
         self.index = ind
         self.printImage()
 
-    def __del__(self):
-        pass
-    #     for f in self.files:
-    #         os.remove('./testImg/'+f)
-    #     sys.exit(0)
-
-
-
-
-
-
 
 # Main function
 if __name__ == "__main__":
