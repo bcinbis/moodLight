@@ -25,10 +25,6 @@ if __name__ == "__main__":
     font = graphics.Font()
     font.LoadFont("rpi-rgb-led-matrix/fonts/7x13.bdf")
 
-    red = graphics.Color(255, 0, 0)
-    green = graphics.Color(0, 255, 0)
-    blue = graphics.Color(0, 0, 255)
-
     COLORS = {
         "red": [255, 0, 0],
         "green": [0, 255, 0],
