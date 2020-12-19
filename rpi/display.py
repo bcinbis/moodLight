@@ -69,7 +69,7 @@ class imgDisplay(Display):
                 self.files.append(f)
 
     def printImage(self):
-        self.image = Image.open('./img '+self.files[self.index])
+        self.image = Image.open('./img/'+self.files[self.index])
         self.image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
         self.matrix.SetImage(self.image.convert('RGB'))
 
