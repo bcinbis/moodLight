@@ -77,6 +77,7 @@ def button18_callback(channel):
     else:
         global nIndex
         global imgNum
+        global esc
 
         start = time.perf_counter()
         while(GPIO.input(19) == GPIO.HIGH):
@@ -114,13 +115,12 @@ if __name__ == '__main__':
     # cli = Client(code)
     # #instert all client code
 
-    # #changing the displayed image
-    # disp = imgDisplay()
-    # imgNum = disp.len
-    # while not esc:
-    #     if oIndex != nIndex:
-    #         disp.sendIndex(nIndex)
-    #         oIndex = nIndex
+    #changing the displayed image
     disp = imgDisplay()
+    imgNum = disp.len
+    while not esc:
+        if oIndex != nIndex:
+            disp.sendIndex(nIndex)
+            oIndex = nIndex
     time.sleep(2)
     del disp
