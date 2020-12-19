@@ -7,5 +7,5 @@ class Client:
         self.partyCode = code
 
     def getImages(self):
-        
+        pass
 
