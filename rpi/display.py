@@ -38,8 +38,8 @@ class Display():
 
 
     def printStr(self):
+        self.matrix.Clear()
         green = graphics.Color(0,255,0)
-        graphics.DrawText(self.matrix, self.font, 2, 10, green, '   ')
         graphics.DrawText(self.matrix, self.font, 2, 10, green, self.str)
 
     def sendIndex(self, index):
