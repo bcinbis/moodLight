@@ -1,3 +1,4 @@
+import os
 import sys
 import string
 # add paths to matrix python modules
@@ -59,7 +60,9 @@ class imgDisplay(Display):
         super().__init__()
 
         #load all images
-
+        files = [f for f in os.listdir('./img') if os.path.isfile(f)]
+        for f in files:
+            print(f)
     #def
 
 
