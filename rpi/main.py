@@ -1,7 +1,12 @@
+# Local imports from our files
 from display import codeDisplay, imgDisplay
 from client import Client
 import client
+
+# RPI pins import
 import RPi.GPIO as GPIO
+
+# Standard imports
 import time
 import fnmatch
 import os
@@ -49,12 +54,12 @@ def button19_callback(channel):
         if newIndex == LENGTH:
             newIndex = 0
 
-    '''
-    Else Satement: Callback during imgDisplay
-    Action 1: changes index, which is sent to imgDisplay (via main) which changes the image currently displayed on led matrix
-    Action 2: Hold down the button for more than 4 seconds and this will begin the ending sequence of the program
-    '''
     else:
+        '''
+        Else Satement: Callback during imgDisplay
+        Action 1: changes index, which is sent to imgDisplay (via main) which changes the image currently displayed on led matrix
+        Action 2: Hold down the button for more than 4 seconds and this will begin the ending sequence of the program
+        '''
         global nIndex
         global imgNum
         global esc
@@ -98,12 +103,13 @@ def button18_callback(channel):
         enter = True
         newIndex = 0
 
-    '''
-    Else Satement: Callback during imgDisplay
-    Action 1: changes index, which is sent to imgDisplay (via main) which changes the image currently displayed on led matrix
-    Action 2: Hold down the button for more than 4 seconds and this will begin the ending sequence of the program
-    '''
+    
     else:
+        '''
+        Else Satement: Callback during imgDisplay
+        Action 1: changes index, which is sent to imgDisplay (via main) which changes the image currently displayed on led matrix
+        Action 2: Hold down the button for more than 4 seconds and this will begin the ending sequence of the program
+        '''
         global nIndex
         global imgNum
         global esc

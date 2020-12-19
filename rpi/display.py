@@ -1,5 +1,7 @@
+# Standard imports
 import os
 import sys
+import time
 import string
 import fnmatch
 
@@ -7,12 +9,13 @@ import fnmatch
 sys.path.append('rpi-rgb-led-matrix/bindings/python/rgbmatrix')
 sys.path.append('rpi-rgb-led-matrix/bindings/python/samples')
 
+# RPI and led matrix imports
 from PIL import Image
 from PIL import ImageDraw
 from rgbmatrix import graphics
 from samplebase import SampleBase
 from rgbmatrix import graphics, RGBMatrixOptions, RGBMatrix
-import time
+
 
 class Display:
     '''
