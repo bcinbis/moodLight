@@ -2,6 +2,8 @@ import json
 from flask import Flask, request, jsonify, render_template
 from flask_socketio import SocketIO
 
+from dataManager import DataManager()
+
 app = Flask(__name__)
 socketio = SocketIO(app)
 
@@ -15,6 +17,12 @@ def home():
     """
     return render_template('index.html')
 
+@app.route('/get-images')
+def getImages():
+    partyCode = request.args.get('partycode')
+    images = dbManager.getPartyImages(partyCode)
+    return json.dumps(images)
 
 if __name__ == '__main__':
+    dbManager = DataManager()``
     socketio.run(app, host=HOST, port=PORT)
