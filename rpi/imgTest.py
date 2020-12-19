@@ -1,15 +1,15 @@
 import os
 import glob
+import fnmatch
 
 class imgDisplay():
     def __init__(self):
         #super().__init__()
 
-        #load all images
-        print('helo')
-        files = [f for f in os.listdir("C:\Users\2019m\Desktop\petals\rpi") if os.path.isfile(f)]
+        files = [f for f in os.listdir("img")]
         for f in files:
-            print(f)
+            if fnmatch.fnmatch(f, '*.jpg'):
+                print(f)
 
 if __name__ == "__main__":
     x = imgDisplay()
