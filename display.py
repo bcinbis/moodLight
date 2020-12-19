@@ -35,7 +35,13 @@ if __name__ == "__main__":
         "blue": [0, 0, 255]
     }
 
-    image = Image.open("./do_not_enter.jpg")
+    for x in range(0, offset_canvas.width):
+        offset_canvas.SetPixel(x, 0, 255, 0, 0)
+        offset_canvas.SetPixel(x, offset_canvas.height - 1, 255, 255, 0)
+
+    for y in range(0, offset_canvas.height):
+
+    image = Image.open("./dont enter.jpg")
     # Make image fit our screen.
     image.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
 
