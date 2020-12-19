@@ -29,7 +29,7 @@ if __name__ == "__main__":
     green = graphics.Color(0, 255, 0)
     blue = graphics.Color(0, 0, 255)
 
-    COLORS {
+    COLORS = {
         "red": [255, 0, 0],
         "green": [0, 255, 0],
         "blue": [0, 0, 255]
