@@ -58,6 +58,7 @@ def button19_callback(channel):
         global nIndex
         global imgNum
         global esc
+        time.sleep(.5)
 
         # Track amount of time that button is held
         start = time.perf_counter()
@@ -106,7 +107,8 @@ def button18_callback(channel):
         global nIndex
         global imgNum
         global esc
-
+        time.sleep(.5)
+        
         # Track amount of time that button is held
         start = time.perf_counter()
         while(GPIO.input(19) == GPIO.HIGH):
