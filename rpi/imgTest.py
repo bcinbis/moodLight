@@ -6,10 +6,10 @@ class imgDisplay():
     def __init__(self):
         #super().__init__()
 
-        files = [f for f in os.listdir("img")]
-        for f in files:
+        files = []
+        for f in os.listdir("img"):
             if fnmatch.fnmatch(f, '*.jpg'):
-                print(f)
+                files.append(f)
 
 if __name__ == "__main__":
     x = imgDisplay()
