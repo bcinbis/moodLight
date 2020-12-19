@@ -2,7 +2,7 @@ import json
 from flask import Flask, request, jsonify, render_template
 from flask_socketio import SocketIO
 from pprint import pprint
-from dataManager import DataManager()
+from dataManager import DataManager
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -20,18 +20,18 @@ def home():
 @app.route('/get-images', methods=['GET'])
 def getImages():
     partyCode = request.args.get('partycode')
-    images = dbManager.getPartyImages(partyCode)
+    images = dbManager.getEventImages(partyCode)
     return json.dumps(images)
 
-@app.route('/create-party', methods=['POST'])
-def createParty():
-    payload request.get_data().decode('utf-8')
+@app.route('/create-event', methods=['POST'])
+def createEvent():
+    payload = request.get_data().decode('utf-8')
     payload = json.loads(payload)
     pprint(payload)
-    dbManager.addParty(payload)
-    response = {'Response': 'Party created'}
+    dbManager.addEvent(payload)
+    response = {'Response': 'Event created'}
     return json.dumps(response)
 
 if __name__ == '__main__':
-    dbManager = DataManager()``
+    dbManager = DataManager()
     socketio.run(app, host=HOST, port=PORT)

@@ -4,7 +4,7 @@ from datetime import datetime
 from config import config
 
 """
-Database: PARTIES
+Database: database
 
 Table: parties
 - code
@@ -31,12 +31,12 @@ class DataManager:
         # Define cleanup function
         atexit.register(self.cleanup)
 
-    def addParty(self, data):
+    def addEvent(self, data):
         code = data['code']
         name = data['name']
         date = data['date']
         images = data['images']
-        # add party to parties table
+        # add event to parties table
         self.cur.execute("INSERT INTO parties (code, name, date) VALUES (%s, %s, %s)", (code, name, date))
         # add all the image urls to the party_images table
         for image in images:
@@ -44,7 +44,7 @@ class DataManager:
         # update db
         self.conn.commit()
 
-    def getPartyImages(self, code):
+    def getEventImages(self, code):
         # execute SQL command and retreive results
         self.cur.execute("SELECT image_url FROM party_images WHERE code == (%s)", (code))
         rawResult = self.cur.fetchall()
