@@ -48,13 +48,13 @@ class DataManager:
 
     def getEventImages(self, code):
         # execute SQL command and retreive results
-        self.cur.execute("SELECT image_url FROM party_images WHERE code = (%s)", (code))
+        self.cur.execute("SELECT image_url FROM party_images WHERE code = (%s)", (code,))
         rawResult = self.cur.fetchall()
         # parse results into a list of urls
         result = []
         for tpl in rawResult:
             result.append(tpl[1])
-            
+
         return result
 
     def cleanup(self):
