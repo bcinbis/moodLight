@@ -11,7 +11,7 @@ from samplebase import SampleBase
 from rgbmatrix import graphics, RGBMatrixOptions, RGBMatrix
 import time
 
-class Display():
+class Display:
     def __init__(self):
         # Configuration for the matrix
         options = RGBMatrixOptions()
@@ -28,6 +28,9 @@ class Display():
         self.font.LoadFont("rpi-rgb-led-matrix/fonts/7x13.bdf")
 
 
+class codeDisplay(Display):
+    def __init__(self):
+        super().__init__()
         #initializing code entering procedures
         #self.pos = 0
         self.chars = ['_']
@@ -35,7 +38,6 @@ class Display():
         self.str = ''
         self.STR = ''
         self.done = False
-
 
     def printStr(self):
         self.matrix.Clear()
@@ -52,7 +54,13 @@ class Display():
             self.done = True
         #self.pos +=1
         
+class imgDisplay(Display):
+    def __init__(self):
+        super().__init__()
 
+        #load all images
+
+    #def
 
 
 

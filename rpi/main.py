@@ -1,4 +1,4 @@
-from display import Display
+from display import codeDisplay, imgDisplay
 from client import Client
 import client
 import RPi.GPIO as GPIO
@@ -26,6 +26,7 @@ def button18_callback(channel):
     time.sleep(.5)
     print('button18')
     global enter
+    global newIndex
     while(GPIO.input(18) == GPIO.HIGH):
         pass
     enter = True
@@ -46,7 +47,8 @@ def joinParty(code):
 
 
 if __name__ == '__main__':
-    disp = Display()
+    #joining a social gathering
+    disp = codeDisplay()
     while not disp.done:
         if enter:
             disp.enter()
@@ -56,3 +58,6 @@ if __name__ == '__main__':
             oldIndex = newIndex
     code = disp.STR
     cli = Client(code)
+    #instert all client code
+
+    #changing the displayed image
