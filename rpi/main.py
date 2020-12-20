@@ -175,7 +175,7 @@ if __name__ == '__main__':
     client = Client(SERVER)
     urls = client.getImageUrls(code)
     client.downloadImages(urls)
-
+    print("downloaded images")
     # User can begin cycling through and choosing which image to display
     disp = imgDisplay()
     imgNum = disp.len
