@@ -131,7 +131,7 @@
     $(() => {
             $("#send").click(()=>{
                 var message = {
-                    code: "abc",
+                    code: "",
                     name: $("#name").val(),
                     date: $("#date").val(),
                     images: []
@@ -141,7 +141,12 @@
         })
 
     function postEvent(message) {
-        $.post(`http://${SERVER}/create-event`, message);
+        $.post(`http://${SERVER}/create-event`, message)
+        .done(function(response) {
+            json = JSON.parse(response)
+            code = json['code']
+            alert("\n\nEVENT CODE: " + code + "\n\n\nMake note of this code now because it will not be displayed again!\n\n");
+        });
     }
 
 </script>

@@ -37,7 +37,7 @@ def generateCode():
     unique = False
     while not unique:
         for i in range(3):
-            code += letters[random.randint(0,26)]
+            code += letters[random.randint(0,25)]
         unique = dbManager.testCode(code)
     print("Generated event code:", code)
     return code
@@ -47,7 +47,6 @@ def createEvent():
     code = generateCode()
     payload = request.get_data().decode('utf-8')
     payload = json.loads(payload)
-    pprint(payload)
     payload['code'] = code
     pprint(payload)
     dbManager.addEvent(payload)
