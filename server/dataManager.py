@@ -50,10 +50,12 @@ class DataManager:
         # execute SQL command and retreive results
         self.cur.execute("SELECT image_url FROM party_images WHERE code = (%s)", (code,))
         rawResult = self.cur.fetchall()
+        print("RAW:", rawResult)
         # parse results into a list of urls
         result = []
         for tpl in rawResult:
-            result.append(tpl[1])
+            result.append(tpl[0])
+        print("RESULT:", result)
 
         return result
 
