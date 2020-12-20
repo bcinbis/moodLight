@@ -34,4 +34,4 @@ def createEvent():
 
 if __name__ == '__main__':
     dbManager = DataManager()
-    socketio.run(app, host=HOST, port=PORT)
+    socketio.run(app, host=HOST, port=PORT, ssl_context='adhoc')
