@@ -82,9 +82,11 @@
                 <input type="file" class="form-control" id="customFile" />
                 <br>
                 <br>
-                <button id= "send" class="btn btn-success">Send</button>
-                <input type="checkbox" id = "default" >
+                <input type="checkbox" id = "default" value = "yes">
                 <label for="default">Use default images</label>
+                <br>
+                <br>
+                <button id= "send" class="btn btn-success">Send</button>
             </div>
         </section>
 
@@ -134,14 +136,15 @@
     SERVER = '35.239.118.105:4200'
     $(() => {
             $("#send").click(()=>{
-                var message = {
-                    
-                    if 
 
+                var message = {
                     code: "",
                     name: $("#name").val(),
                     date: $("#date").val(),
                     images: []
+                }
+                if($("#default").val() === "yes" ) {
+                        message["code"] = "abc"
                 }
                 postEvent(JSON.stringify(message))
             })
