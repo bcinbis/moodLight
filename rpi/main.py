@@ -145,15 +145,17 @@ def cleanup():
     Action: This removes previous files from a past social gathering
     '''
     files = []
-    for f in os.listdir("testImg"):
+    for f in os.listdir("img"):
         if fnmatch.fnmatch(f, '*.jpg'):
             files.append(f)
     for f in files:
-            os.remove('./testImg/'+f)
+            os.remove('./img/'+f)
 
 
 
 if __name__ == '__main__':
+    SERVER = '35.239.118.105:4200'
+
     # Free up any storage 
     cleanup()
 
@@ -169,8 +171,10 @@ if __name__ == '__main__':
     code = disp.STR # code is retrieved here
     flag = False # adjust button callbacks to deal with seacond display
     
-    # instert all client code
-    cli = Client(code)
+    # Insert all client code
+    cli = Client(SERVER)
+    urls = client.getImageUrls(code)
+    client.downloadImages(urls)
 
     # User can begin cycling through and choosing which image to display
     disp = imgDisplay()
@@ -180,7 +184,7 @@ if __name__ == '__main__':
             disp.sendIndex(nIndex)
             oIndex = nIndex
     
-    # ending/shutdown sequence
+    # Ending/shutdown sequence
     del disp
     time.sleep(2)
     sys.exit(0)
