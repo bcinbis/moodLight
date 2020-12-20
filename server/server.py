@@ -47,7 +47,6 @@ def createEvent():
     code = generateCode()
     payload = request.get_data().decode('utf-8')
     payload = json.loads(payload)
-    pprint(payload)
     payload['code'] = code
     pprint(payload)
     dbManager.addEvent(payload)

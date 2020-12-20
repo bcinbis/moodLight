@@ -58,7 +58,6 @@ class DataManager:
         return result
 
     def testCode(self, code):
-        print("here")
         self.cur.execute("SELECT code FROM parties")
         result = self.cur.fetchall()
         for tpl in result:
