@@ -1,5 +1,5 @@
 import json
-
+import random
 from flask import Flask, request, jsonify, render_template
 from flask_socketio import SocketIO
 from pprint import pprint
@@ -37,7 +37,7 @@ def generateCode():
     while not unique:
         for i in range(3):
             code += letters[random.randint(0,26)]
-        unique
+        unique = dbManager.testCode(code)
 
 @app.route('/create-event', methods=['POST'])
 def createEvent():

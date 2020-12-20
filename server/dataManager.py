@@ -57,6 +57,12 @@ class DataManager:
 
         return result
 
+    def testCode(self, code):
+        self.cur.execute("SELECT code FROM parties")
+        result = self.cur.fetchall()
+        print(result)
+
+
     def cleanup(self):
         """
         Summary: close the connection to the database on termination
