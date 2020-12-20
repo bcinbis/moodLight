@@ -5,7 +5,10 @@ from flask_socketio import SocketIO
 from pprint import pprint
 from dataManager import DataManager
 
-app = Flask(__name__)
+TEMPLATE_DIR = os.path.abspath('./templates')
+STATIC_DIR = os.path.abspath('./templates/css')
+
+app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 
 HOST = '0.0.0.0'
 PORT = '4200'
