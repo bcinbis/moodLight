@@ -1,3 +1,6 @@
+'''
+File that handles all operations dealing with the LED-matrix
+'''
 # Standard imports
 import os
 import sys
