@@ -51,6 +51,7 @@ def createEvent():
 
     if payload["code"] == "abc":
         code = "abc"
+        payload["images"] = []
 
     payload['code'] = code
     pprint(payload)
