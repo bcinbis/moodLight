@@ -15,7 +15,7 @@ class Client:
 
     def downloadImages(self, urls):
         for i in range(len(urls)):
-            file = open(str(i)+'.jpg','wb')
+            file = open('./img/'+str(i)+'.jpg','wb')
             file.write(requests.get(urls[i]).content)
             file.close()
 
