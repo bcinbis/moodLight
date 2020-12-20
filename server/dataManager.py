@@ -53,7 +53,7 @@ class DataManager:
         # parse results into a list of urls
         result = []
         for tpl in rawResult:
-            result.append(tpl[1])
+            result.append(tpl[0])
 
         return result
 
