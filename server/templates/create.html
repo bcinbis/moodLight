@@ -147,9 +147,14 @@
                     images: [],
                     urlList: $("#urls").val()
                 }
-                if($("#default").val() === "yes" ) {
-                        message["code"] = "abc"
+                //if($("#default").val() == "yes" ) {
+                        //message["code"] = "abc"
+                //}
+
+                if(document.getElementById("default").checked) {
+                    message["code"] = "abc"
                 }
+
                 postEvent(JSON.stringify(message))
             })
         })
