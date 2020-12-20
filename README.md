@@ -4,7 +4,7 @@ project
 
 ## What is Moodlight?
 ### In a tweet
-Words are hard. Saying them to people? EVEN HARDER. How can you ask someone if they’re single? Or to leave you alone? Use Moodlight! Use Moodlight to display what you’re feeling via pictures to avoid painful convos! Also personalize Moodlight to show team names or custom pics
+Words are hard. Saying them to people? EVEN HARDER. Find it hard at social events to ask if someone’s single? To leave you alone? Or do you hate intros like What team or organization are you with? Then use Moodlight! Let Moodlight show others the things you don’t want to say/ask
 
 ### Overview
 Our project is broken up into two basic parts: event creation and participant joining. The event creator end of the program works through a html web site. Here event creators can send a request to create their event to our server hosted on Google Cloud Platform. If all the data was entered correctly, a successful response is sent back to the event creator and the event is stored into our Google CloudSQL Postgres database. After this, everything on the event creator end is completed.  
