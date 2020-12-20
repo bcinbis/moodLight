@@ -33,4 +33,15 @@ Here are the following python libraries that are used and should be downloaded w
 On your RPi, enter the following into the command line to enable writing/reading of all files:
 - sudo chmod -R 777 ~/moodLight
 
+
+## Software, Server, and Setup of Everything in Between
 ### Setup Server and Database
+How to setup a server and postgreSQL database on Google Cloud Platform
+- [Setup a Server](https://linuxhint.com/setup_google_cloud_server/). Run 'moodLight/server/server.py' on the instance you create
+- [Setup postgreSQL database](https://www.cloudbooklet.com/setup-cloud-sql-for-postgresql-on-google-cloud/)
+
+### How to Host the Website
+
+### How to Run RPi Progam
+- Navigate to 'moodlight/rpi' directory in a terminal
+- Type the following command to begin: sudo python3 main.py
