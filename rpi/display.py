@@ -86,7 +86,7 @@ class imgDisplay(Display):
         self.image  = ''
         self.index = 0
         self.files = []
-        for f in os.listdir("testImg"):
+        for f in os.listdir("img"):
             if fnmatch.fnmatch(f, '*.jpg'):
                 self.files.append(f)
         self.len = len(self.files)
@@ -94,7 +94,7 @@ class imgDisplay(Display):
     # Print the current selected image to the LED matrix
     def printImage(self):
         self.matrix.Clear()
-        self.image = Image.open('./testImg/'+self.files[self.index])
+        self.image = Image.open('./img/'+self.files[self.index])
         self.image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
         self.matrix.SetImage(self.image.convert('RGB'))
 
