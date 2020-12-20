@@ -165,7 +165,7 @@ if __name__ == '__main__':
         if enter:
             disp.enter()
             enter = False
-        if oldIndex != newIndex:
+        if oldIndex != newIndex and not enter:
             disp.sendIndex(newIndex)
             oldIndex = newIndex
     code = disp.STR # code is retrieved here
