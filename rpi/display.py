@@ -63,7 +63,7 @@ class codeDisplay(Display):
         self.matrix.Clear()
         red = graphics.Color(255,0,0)
         green = graphics.Color(0,255,0)
-        graphics.DrawText(self.matrix, self.font, 2, 10, red, self.str)
+        graphics.DrawText(self.matrix, self.font, 2, 10, red, "Code:")
         graphics.DrawText(self.matrix, self.font, 2, 20, green, self.str)
 
     # Where index is updated through button presses in main,
