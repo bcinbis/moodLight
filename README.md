@@ -2,6 +2,8 @@
 Baran Cinbis, Evan Hashemi, Lorand Cheng Hack UMass 2020 
 project
 
+![logo](moodlightLogo.jpg)
+
 ## What is Moodlight?
 ### In a tweet
 Words are hard. Saying them to people? EVEN HARDER. How can you ask someone if they’re single? Or to leave you alone? Use Moodlight! Use Moodlight to display what you’re feeling via pictures to avoid painful convos! Also personalize Moodlight to show team names or custom pics
