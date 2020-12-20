@@ -19,6 +19,9 @@ def home():
 
 @app.route('/create.html')
 def create():
+    """
+    Summary: serves create.html file to clients creating an event
+    """
     return render_template('create.html')
 
 @app.route('/get-images', methods=['GET'])
@@ -27,6 +30,14 @@ def getImages():
     images = dbManager.getEventImages(eventCode)
     return json.dumps(images)
 
+def generateCode():
+    letters = string.ascii_lowercase
+    code = ''
+    unique = False
+    while not unique:
+        for i in range(3):
+            code += letters[random.randint(0,26)]
+        unique
 
 @app.route('/create-event', methods=['POST'])
 def createEvent():
