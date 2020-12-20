@@ -38,6 +38,19 @@
             </div>
         </nav>
 
+        <!-- 
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-end">
+                        <h1 class="text-uppercase text-white font-weight-bold">Make your parties safe and simple</h1>
+                        <hr class="divider my-4" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        -->
+
         <!-- Masthead-->
         <header class="masthead">
             <div class="container h-100">
@@ -45,6 +58,10 @@
                     <div class="col-lg-10 align-self-end">
                         <h1 class="text-uppercase text-white font-weight-bold">Make your parties safe and simple</h1>
                         <hr class="divider my-4" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5"></p>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                     </div>
                 </div>
             </div>
@@ -63,6 +80,13 @@
                 <br>
                 <label class="form-label" for="customFile">Image Upload</label>
                 <input type="file" class="form-control" id="customFile" />
+                <br>
+                <br>
+                <textarea id="urls" class="form-control" placeholder="Enter image URLs, separated by commas followed by a space:"></textarea>
+                <br>
+                <br>
+                <input type="checkbox" id = "default" value = "yes">
+                <label for="default"> Use default images</label>
                 <br>
                 <br>
                 <button id= "send" class="btn btn-success">Send</button>
@@ -93,6 +117,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Footer-->
         <footer class="bg-light py-5">
             <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Evan Hashemi</div></div>
@@ -105,6 +130,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
     </body>
 </html>
 
@@ -113,12 +139,22 @@
     SERVER = '35.239.118.105:4200'
     $(() => {
             $("#send").click(()=>{
+                
                 var message = {
                     code: "",
                     name: $("#name").val(),
                     date: $("#date").val(),
-                    images: []
+                    images: [],
+                    urlList: $("#urls").val()
                 }
+                //if($("#default").val() == "yes" ) {
+                        //message["code"] = "abc"
+                //}
+
+                if(document.getElementById("default").checked) {
+                    message["code"] = "abc"
+                }
+
                 postEvent(JSON.stringify(message))
             })
         })

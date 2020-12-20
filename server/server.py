@@ -42,11 +42,28 @@ def generateCode():
     print("Generated event code:", code)
     return code
 
+def parseURL(inp):
+    urls = []
+    for url in inp.split(", "):
+        urls.append(url)
+
+
+    return urls
+
 @app.route('/create-event', methods=['POST'])
 def createEvent():
+    
     code = generateCode()
     payload = request.get_data().decode('utf-8')
     payload = json.loads(payload)
+
+    payload["images"] = parseURL(payload["urlList"])
+    
+
+    if payload["code"] == "abc":
+        code = "abc"
+        payload["images"] = []
+
     payload['code'] = code
     pprint(payload)
     dbManager.addEvent(payload)

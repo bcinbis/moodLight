@@ -33,7 +33,7 @@ class Client:
 
 if __name__ == "__main__":
     SERVER = '35.239.118.105:4200'
-    CODE = 'abc'
+    CODE = 'ngt'
     client = Client(SERVER)
     urls = client.getImageUrls(CODE)
     client.downloadImages(urls)
