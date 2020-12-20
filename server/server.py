@@ -18,11 +18,16 @@ def home():
     """
     return render_template('index.html')
 
+@app.route('/create')
+def create():
+    return render_template('create.html')
+
 @app.route('/get-images', methods=['GET'])
 def getImages():
     eventCode = request.args.get('eventcode')
     images = dbManager.getEventImages(eventCode)
     return json.dumps(images)
+
 
 @app.route('/create-event', methods=['POST'])
 def createEvent():
