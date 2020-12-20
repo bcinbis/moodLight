@@ -61,7 +61,7 @@ class DataManager:
         self.cur.execute("SELECT code FROM parties")
         result = self.cur.fetchall()
         print(result)
-
+        return True
 
     def cleanup(self):
         """
