@@ -44,9 +44,14 @@ def generateCode():
 
 @app.route('/create-event', methods=['POST'])
 def createEvent():
+    
     code = generateCode()
     payload = request.get_data().decode('utf-8')
     payload = json.loads(payload)
+
+    if payload["code"] == "abc":
+        code = "abc"
+
     payload['code'] = code
     pprint(payload)
     dbManager.addEvent(payload)
