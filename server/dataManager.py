@@ -60,7 +60,9 @@ class DataManager:
     def testCode(self, code):
         self.cur.execute("SELECT code FROM parties")
         result = self.cur.fetchall()
-        print(result)
+        for tpl in result:
+            if tpl[0] == code:
+                return False
         return True
 
     def cleanup(self):
