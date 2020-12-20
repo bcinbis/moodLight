@@ -82,7 +82,7 @@ class imgDisplay(Display):
     def __init__(self):
         super().__init__()
 
-        # Load all image names
+        # Load all image names 
         self.image  = ''
         self.index = 0
         self.files = []
