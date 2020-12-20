@@ -67,6 +67,7 @@
                 <br>
                 <button id= "send" class="btn btn-success">Send</button>
             </div>
+            <div id="result"></div>
         </section>
 
 
@@ -124,9 +125,10 @@
         })
 
     function postEvent(message) {
-        $.post(`http://${SERVER}/create-event`, message)
-        .done(function(response) {
-            alert("Data Loaded: " + response);
+        var posting = $.post(`http://${SERVER}/create-event`, message);
+        posting.done(function( data ) {
+            var content = $( data ).find( "#content" );
+            $( "#result" ).empty().append( content );
         });
     }
 
