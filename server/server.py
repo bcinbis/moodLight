@@ -1,5 +1,6 @@
 import json
 import random
+import string
 from flask import Flask, request, jsonify, render_template
 from flask_socketio import SocketIO
 from pprint import pprint
@@ -38,14 +39,19 @@ def generateCode():
         for i in range(3):
             code += letters[random.randint(0,26)]
         unique = dbManager.testCode(code)
+    print("Generated event code:", code)
+    return code
 
 @app.route('/create-event', methods=['POST'])
 def createEvent():
+    code = generateCode()
     payload = request.get_data().decode('utf-8')
     payload = json.loads(payload)
     pprint(payload)
+    payload['code'] = code
+    pprint(payload)
     dbManager.addEvent(payload)
-    response = {'Response': 'Event created'}
+    response = {'code': code}
     return json.dumps(response)
 
 if __name__ == '__main__':

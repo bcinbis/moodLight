@@ -58,10 +58,13 @@ class DataManager:
         return result
 
     def testCode(self, code):
+        print("here")
         self.cur.execute("SELECT code FROM parties")
         result = self.cur.fetchall()
-        print(result)
-
+        for tpl in result:
+            if tpl[0] == code:
+                return False
+        return True
 
     def cleanup(self):
         """
@@ -69,3 +72,9 @@ class DataManager:
         """
         print("Running cleanup...")
         self.conn.close()
+
+if __name__ == '__main__':
+    dm = DataManager()
+    print(dm.testCode('abc'))
+    print(dm.testCode('ebf'))
+    print(dm.testCode('fkc'))
