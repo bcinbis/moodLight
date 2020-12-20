@@ -16,6 +16,7 @@ def home():
     """
     Summary: serves index.html file to clients connecting on the home page
     """
+
     return render_template('index.html')
 
 @app.route('/create.html')
@@ -23,15 +24,24 @@ def create():
     """
     Summary: serves create.html file to clients creating an event
     """
+
     return render_template('create.html')
 
 @app.route('/get-images', methods=['GET'])
 def getImages():
+    """
+    Summary: returns image urls for a given event code
+    """
+
     eventCode = request.args.get('eventcode')
     images = dbManager.getEventImages(eventCode)
     return json.dumps(images)
 
 def generateCode():
+    """
+    Summary: generates a unique three letter code for a new event
+    """
+
     letters = string.ascii_lowercase
     code = ''
     unique = False
@@ -43,15 +53,20 @@ def generateCode():
     return code
 
 def parseURL(inp):
+    """
+    Summary: parses list of urls submitted in frontend
+    """
+
     urls = []
     for url in inp.split(", "):
         urls.append(url)
-
-
     return urls
 
 @app.route('/create-event', methods=['POST'])
 def createEvent():
+    """
+    Summary: endpoint for creating a new event
+    """
     
     code = generateCode()
     payload = request.get_data().decode('utf-8')

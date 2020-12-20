@@ -18,15 +18,21 @@ Here is the hardware that makes up the moodlight
 - [Adafruit RGB matrix RPi Bonnet](https://www.adafruit.com/product/3211)
 - [Adafruit 32x32 LED Matrix](https://www.adafruit.com/product/2026)
 - AC to DC wall plug Power Supply with 5V and at least 4A
+- Our 
 
 ### Downloads and Settings
 Here are the following python libraries that are used and should be downloaded on your RaspberryPi  
 - pip install requests
 - follow installation instructions [here](https://learn.adafruit.com/adafruit-rgb-matrix-bonnet-for-raspberry-pi/driving-matrices) This contains hardware setup as well for moodlight
 
-Here are the following python libraries that are used and should be downloaded wherever you host your server  
-- pip install psycopg2
-- pip install flask
+Here are the installations to be downloaded onto the server
+
+    sudo apt-get update
+    sudo apt-get install git -y
+    sudo apt-get -y install python3-pip
+    sudo pip3 install flask python-dotenv
+    sudo apt-get install postgresql-client -y
+    sudo apt-get install python3-psycopg2
 
 On your RPi, enter the following into the command line to enable writing/reading of all files:
 - sudo chmod -R 777 ~/moodLight
@@ -36,9 +42,7 @@ On your RPi, enter the following into the command line to enable writing/reading
 ### Setup Server and Database
 How to setup a server and postgreSQL database on Google Cloud Platform
 - [Setup a Server](https://linuxhint.com/setup_google_cloud_server/). Run 'moodLight/server/server.py' on the instance you create
-- [Setup postgreSQL database](https://www.cloudbooklet.com/setup-cloud-sql-for-postgresql-on-google-cloud/)
-
-### How to Host the Website
+- [Setup postgreSQL database](https://www.cloudbooklet.com/setup-cloud-sql-for-postgresql-on-google-cloud/) Connect to the postgres database by filling out the database.ini configuration file on the server
 
 ### How to Run RPi Progam
 - Navigate to 'moodlight/rpi' directory in a terminal

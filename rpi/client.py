@@ -29,14 +29,6 @@ class Client:
             file = open('./img/'+str(i)+'.jpg','wb')
             file.write(requests.get(urls[i]).content)
             file.close()
-
-
-if __name__ == "__main__":
-    SERVER = '35.239.118.105:4200'
-    CODE = 'ngt'
-    client = Client(SERVER)
-    urls = client.getImageUrls(CODE)
-    client.downloadImages(urls)
     
 
 
