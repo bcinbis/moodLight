@@ -172,7 +172,7 @@ if __name__ == '__main__':
     flag = False # adjust button callbacks to deal with seacond display
     
     # Insert all client code
-    cli = Client(SERVER)
+    client = Client(SERVER)
     urls = client.getImageUrls(code)
     client.downloadImages(urls)
 
