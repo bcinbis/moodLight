@@ -147,7 +147,7 @@
                     images: [],
                     urlList: $("#urls").val()
                 }
-                if($("#default").val() === "yes" ) {
+                if($("#default").val() == "yes" ) {
                         message["code"] = "abc"
                 }
                 postEvent(JSON.stringify(message))
