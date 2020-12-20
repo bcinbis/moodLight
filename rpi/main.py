@@ -138,9 +138,9 @@ def button18_callback(channel):
 # Setting up interrupts for the buttons
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.add_event_detect(19, GPIO.RISING, callback=button19_callback, bouncetime=400)
+GPIO.add_event_detect(19, GPIO.RISING, callback=button19_callback)
 GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.add_event_detect(18, GPIO.RISING, callback=button18_callback, bouncetime=400)
+GPIO.add_event_detect(18, GPIO.RISING, callback=button18_callback)
 
 
 def cleanup():
