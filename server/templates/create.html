@@ -126,7 +126,8 @@
     function postEvent(message) {
         $.post(`http://${SERVER}/create-event`, message)
         .done(function(response) {
-            alert("Data Loaded: " + response);
+            code = response['code']
+            alert("EVENT CODE: " + code);
         });
     }
 
