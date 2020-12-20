@@ -1,3 +1,6 @@
+'''
+File that handles all operations dealing with the LED-matrix
+'''
 # Standard imports
 import os
 import sys
@@ -54,12 +57,16 @@ class codeDisplay(Display):
         self.str = ''
         self.STR = ''
         self.done = False
+        red = graphics.Color(255,0,0)
+        graphics.DrawText(self.matrix, self.font, 2, 10, red, "Code")
 
     # Update led matrix with current selection of letters
     def printStr(self):
         self.matrix.Clear()
+        red = graphics.Color(255,0,0)
         green = graphics.Color(0,255,0)
-        graphics.DrawText(self.matrix, self.font, 2, 10, green, self.str)
+        graphics.DrawText(self.matrix, self.font, 2, 10, red, "Code")
+        graphics.DrawText(self.matrix, self.font, 2, 20, green, self.str)
 
     # Where index is updated through button presses in main,
     # This allows for cycling through all of the alphabet

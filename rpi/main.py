@@ -1,3 +1,7 @@
+'''
+File that handles all button interactions, and creates instances of the 2 displays and the client.
+Also works as the mediator for sending info between instances of codDisplay, imgDisplay, and Client
+'''
 # Local imports from our files
 from display import codeDisplay, imgDisplay
 from client import Client
