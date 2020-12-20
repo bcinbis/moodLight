@@ -57,6 +57,8 @@ class codeDisplay(Display):
         self.str = ''
         self.STR = ''
         self.done = False
+        red = graphics.Color(255,0,0)
+        graphics.DrawText(self.matrix, self.font, 2, 10, red, "Code")
 
     # Update led matrix with current selection of letters
     def printStr(self):
