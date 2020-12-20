@@ -6,7 +6,6 @@ from pprint import pprint
 from dataManager import DataManager
 
 app = Flask(__name__)
-socketio = SocketIO(app)
 
 HOST = '0.0.0.0'
 PORT = '4200'
@@ -40,4 +39,4 @@ def createEvent():
 
 if __name__ == '__main__':
     dbManager = DataManager()
-    socketio.run(app, host=HOST, port=PORT)
+    app.run(host=HOST, port=PORT)
