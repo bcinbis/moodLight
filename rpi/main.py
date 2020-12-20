@@ -174,6 +174,7 @@ if __name__ == '__main__':
     # Insert all client code
     client = Client(SERVER)
     urls = client.getImageUrls(code)
+    print(urls)
     client.downloadImages(urls)
     print("downloaded images")
     # User can begin cycling through and choosing which image to display
