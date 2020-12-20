@@ -82,6 +82,9 @@
                 <input type="file" class="form-control" id="customFile" />
                 <br>
                 <br>
+                <textarea id="urls" class="form-control" placeholder="Enter image URLs, separated by commas followed by a space:"></textarea>
+                <br>
+                <br>
                 <input type="checkbox" id = "default" value = "yes">
                 <label for="default"> Use default images</label>
                 <br>
@@ -136,12 +139,13 @@
     SERVER = '35.239.118.105:4200'
     $(() => {
             $("#send").click(()=>{
-
+                
                 var message = {
                     code: "",
                     name: $("#name").val(),
                     date: $("#date").val(),
-                    images: []
+                    images: [],
+                    urlList: $("#urls").val()
                 }
                 if($("#default").val() === "yes" ) {
                         message["code"] = "abc"
