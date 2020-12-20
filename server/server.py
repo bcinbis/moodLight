@@ -1,4 +1,5 @@
 import json
+
 from flask import Flask, request, jsonify, render_template
 from flask_socketio import SocketIO
 from pprint import pprint
@@ -34,4 +35,4 @@ def createEvent():
 
 if __name__ == '__main__':
     dbManager = DataManager()
-    socketio.run(app, host=HOST, port=PORT, ssl_context='adhoc')
+    socketio.run(app, host=HOST, port=PORT)
