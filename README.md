@@ -47,3 +47,7 @@ How to setup a server and postgreSQL database on Google Cloud Platform
 ### How to Run RPi Progam
 - Navigate to 'moodLight/rpi' directory in a terminal
 - Type the following command to begin: sudo python3 main.py
+
+## Demo Video
+https://www.youtube.com/watch?v=X35ZOu4S-GA&feature=youtu.be
+
